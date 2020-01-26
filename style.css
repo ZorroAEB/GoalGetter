@@ -1,0 +1,66 @@
+.menue {
+    border: 7px solid #1E8A8C;
+    text-align:center;
+    margin:20px;
+    background-color:#1E8A8C;
+    border-radius:15px;
+}
+a {
+    margin:15px;
+    text-decoration:none;
+}
+.header {
+    text-align:center;
+    font-family:Cursive;
+}
+a:link {
+    color:white;
+    font-weight:bold;
+}
+a:visited {
+    color:white;
+    font-weight:bold;
+}
+a:hover {
+    color:#1C505C;
+    font-weight:bold;
+}
+img {
+    width:250px;
+    height:250px;
+    text-align:center;
+}
+h1 {
+    font-size:100px;
+    font-weight:normal;
+}
+body {
+    background-color:#dae9ee;
+    font-family:Arial;
+}
+#board {
+    background:url("https://lh3.googleusercontent.com/-CAQS_6AjHPM/XizQTN34ktI/AAAAAAAAYPI/zFKun88-iFgTUDYcdjxFGzQOAfDpnDRhwCLcBGAsYHQ/s512/succulent.jpg");
+    background-size:cover;
+    border:1px solid black;
+    height:350px;
+    width:650px;
+}
+.character {
+    background:url("https://lh3.googleusercontent.com/-3ESQOKX0NaU/Xiy6S1b8ptI/AAAAAAAAYOY/1IHLjLuTHGYXb3NU_j6PwRrHcBDru5lTQCK8BGAsYHg/s413/20200125_114446.png");
+    background-size:cover;
+    width:120px;
+    height:120px;
+    padding:10px;
+    margin:10px;
+    float:left;
+}
+.hidden {
+    display:none;
+}
+.visible {
+    display:block;
+}
+.goodResolution {
+    background:url("https://lh3.googleusercontent.com/-75qkfWvVl7Y/Xiy6lJQkYOI/AAAAAAAAYOo/25dMM1PmeuM5EQ_eSVoaeyIYA1y0_M3OwCK8BGAsYHg/s321/20200125_120803.png");
+    background-size:cover;
+}
