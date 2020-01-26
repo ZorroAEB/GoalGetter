@@ -1,0 +1,69 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <title>Goal Getter</title>
+            <link rel="stylesheet" type="text/css" href="style.css"> <!--Link to stylesheet-->
+        </head>
+        <body>
+            <div class="header">
+                <h1>Goal Getters</h1> <!--Title-->
+            </div>
+            <div class="menue"> <!--Links to other pages-->
+                <a href="index.html">Home</a> <!--Link to home page-->
+                <a href="game.html">Game</a> <!--Link to game page-->
+                <a href="tips.html">Goal Setting Tips</a> <!--Link to goal setting tips page-->
+                <a href="about-author.html">About The Authors</a> <!--Link to about the author page-->
+                <a href="updates.html">Coming Soon!</a> <!--Link to updates page-->
+            </div>
+            <div class="content">
+                <h3>Play Our Game!</h3>
+                <p>This game will help you identify good habits. Five bad habits will be shown, and one good habit will be shown. If you click on the good habit, you will get one point, but if you click on the bad habit, you will lose two points. This will happen 5 times. Good luck!</p>
+                <input type="button" value="Play" onclick="startGame()";/> <!--When the button is clicked the function startGame is called-->
+                <div id="board"> <!--Id pulls css for board to be drawn-->
+                    <div class="character">1</div> <!--The character class designs the icons/cards, which goes for all of the character divs.-->
+                    <div class="character">2</div>
+                    <div class="character">3</div>
+                    <div class="character">4</div>
+                    <div class="character">5</div>
+                    <div class="character">6</div>
+                </div>
+                <script>
+                    function startGame() { //When this function is called, the game starts.
+                        gameLoop(); //Calls the timer
+                    }
+                    var loops=0; //This creates a variable that will add 1 to its value every time that it is called
+                    var peopleVisible=false;
+                    var gameScore=0; //This sets the game score to 0.
+                    function gameLoop() { //When this function is called, the timer starts
+                        peopleVisible=!peopleVisible
+                        createCharacters(); //Calls the createCharacters function
+                        loops++;
+                        if(loops < 10) { //If the loop hasn't reached 10, then it will reset.
+                            setTimeout(gameLoop, 3000); //This is the actual timer
+                        }
+                        else { //If the loop has reached more than 10, it will send this alert.
+                            alert("You scored " + gameScore); //Shows the player how many points they got
+                        }
+                    }
+                    function createCharacters() {
+                        var board=document.getElementById("board"); //Will find the id board
+                        var classToSet=peopleVisible ? "character visible":"character hidden"; //Makes the people visible if they are hidden and hidden if they are visible
+                        for(var index=0; index < 6; index++) {
+                            board.children[index].className=classToSet;
+                            board.children[index].innerHTML=""; //Will put the word Procrastination on all of the cards
+                            board.children[index].onclick=function() {
+                                gameScore+= -2; //Whenever someone clicks on Procrastination, they lose two points.
+                            }
+                        }
+                        var randomNumber = Math.floor(Math.random() * 6) + 1;
+                        board.children[randomNumber-1].innerHTML=""; //Assigns GoodResolution to a random card.
+                        board.children[randomNumber-1].onclick=function(){
+                            gameScore++; //Whenever someone clicks on a GoodResolution they gain one point.
+                        }
+                        board.children[randomNumber-1].className=classToSet + " goodResolution";
+                    }
+                </script>
+            </div>
+        </body>
+    </html>
+</DOCTYPE>
